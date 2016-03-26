@@ -11,6 +11,8 @@ import java.util.Properties;
 public class GlobalConfig {
     private static Map<String,Properties> propsMap = new HashMap<>();
 
+    private GlobalConfig(){}
+
     private static Properties loadProperties(String propsName){
         if(!propsMap.containsKey(propsName)){
             Properties theProps = new Properties();
