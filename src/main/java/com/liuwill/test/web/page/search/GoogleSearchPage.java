@@ -52,7 +52,8 @@ public class GoogleSearchPage extends BasePage{
     private void pauseWait(int miliSecond){
         try {
             Thread.sleep(miliSecond);
-        } catch (InterruptedException e) {}
+        } catch (InterruptedException e) {
+        }
     }
 
     public void typeSearchTerm(String searchTerm) {

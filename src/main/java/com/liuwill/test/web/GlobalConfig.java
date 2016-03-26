@@ -1,5 +1,6 @@
 package com.liuwill.test.web;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +12,8 @@ import java.util.Properties;
 public class GlobalConfig {
     private static Map<String,Properties> propsMap = new HashMap<>();
 
-    private GlobalConfig(){}
+    private GlobalConfig(){
+    }
 
     private static Properties loadProperties(String propsName){
         if(!propsMap.containsKey(propsName)){
@@ -21,8 +23,7 @@ public class GlobalConfig {
                 InputStream in = ClassLoader.getSystemResourceAsStream("config/"+propsName+".properties");
                 theProps.load(in);
                 propsMap.put(propsName,theProps);
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (IOException e) {
                 return null;
             }
         }

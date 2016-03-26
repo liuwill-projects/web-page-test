@@ -8,6 +8,16 @@ import org.testng.annotations.Test;
  * Created by Administrator on 2016/3/26 0026.
  */
 public class GlobalConfigTest {
+    @Test(groups = {"config"})
+    public void testUrlConfig(){
+        System.out.println(GlobalConfig.getWebUrl("ehuarong.login"));
+        Assert.assertTrue(GlobalConfig.getWebUrl("ehuarong.login").contains("a/login"));
+
+        System.out.println(GlobalConfig.getWebUrl("ehuarong.home"));
+        Assert.assertTrue(GlobalConfig.getWebUrl("ehuarong.home").contains("http://"));
+
+        System.out.println("Url Config Success");
+    }
 
     @Test(groups = {"config"})
     public void testSeleniumConfig(){
