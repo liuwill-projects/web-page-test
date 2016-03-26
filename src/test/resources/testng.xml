@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestAll">
+
+    <test name="TestWebHelper" enabled="false">
+        <groups>
+            <run>
+                <include name="google" />
+                <exclude name="close" />
+                <exclude name="exclude"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.liuwill.testng.web.search.WhenAUserSearchesOnGoogle"/>
+        </classes>
+    </test>
+
+    <test name="TestConfig" enabled="true">
+        <groups>
+            <run>
+                <include name="config" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.liuwill.testng.web.GlobalConfigTest"/>
+        </classes>
+    </test>
+</suite>
