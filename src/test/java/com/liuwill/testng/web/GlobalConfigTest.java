@@ -10,11 +10,8 @@ import org.testng.annotations.Test;
 public class GlobalConfigTest {
     @Test(groups = {"config"})
     public void testUrlConfig(){
-        System.out.println(GlobalConfig.getWebUrl("ehuarong.login"));
-        Assert.assertTrue(GlobalConfig.getWebUrl("ehuarong.login").contains("a/login"));
-
-        System.out.println(GlobalConfig.getWebUrl("ehuarong.home"));
-        Assert.assertTrue(GlobalConfig.getWebUrl("ehuarong.home").contains("http://"));
+        System.out.println(GlobalConfig.getWebUrl("google.search"));
+        Assert.assertTrue(GlobalConfig.getWebUrl("google.search").contains("https://"));
 
         System.out.println("Url Config Success");
     }
